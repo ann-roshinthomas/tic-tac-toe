@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
+body {
+  font-family: sans-serif;
+  background-color: lightgrey;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 0 auto;
+  row-gap: 16px;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  width: 25%;
 }
 
-.App-link {
-  color: #61dafb;
+.gameBoard {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cell {
+  background-color: darkgray;
+  border: 1px solid #ccc;
+  color: #000;
+  font-size: min(48px, 10vw);
+  font-weight: bold;
+  vertical-align: middle;
+  aspect-ratio: 1 / 1;
+}
+
+.cell:not(:disabled) {
+  cursor: pointer;
+}
+
+.resetBtn {
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: gray;
+  color: black;
+  border: none;
+  font-weight: bolder;
+}
+
+.status {
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+.winner {
+  color: green;
+}
+
+.draw {
+  color: red;
 }
